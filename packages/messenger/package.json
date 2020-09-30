@@ -1,0 +1,24 @@
+{
+  "name": "@bfun/messenger",
+  "version": "1.0.0",
+  "description": "@bfun/messenger",
+  "main": "dist/messenger.umd.prod.js",
+  "module": "dist/messenger.esm.prod.js",
+  "types": "dist/index.d.ts",
+  "buildOptions": {
+    "env": "production",
+    "formats": [
+      "umd",
+      "esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfunjs/bfun.git"
+  },
+  "keywords": [
+    "bfun"
+  ],
+  "author": "suibinc@qq.com",
+  "license": "MIT"
+}
