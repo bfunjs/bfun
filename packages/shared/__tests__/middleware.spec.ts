@@ -22,20 +22,20 @@ describe('file://src/core/middleware.ts', () => {
         await instance.run(ctx);
         expect(ctx.value).toBe(2);
     })
-
-    it('parse', async () => {
-        const ctx: any = {};
-        const instance = Middleware.parse([
-            async (ctx, next) => {
-                ctx.a = 1;
-                await next();
-            },
-            async (ctx, next) => {
-                ctx.b = 2;
-                await next();
-            }
-        ])
-        await instance.run(ctx);
-        expect(ctx.a + ctx.b).toBe(3);
-    })
 });
+
+it('parse', async () => {
+    const ctx: any = {};
+    const instance = Middleware.parse([
+        async (ctx, next) => {
+            ctx.a = 1;
+            await next();
+        },
+        async (ctx, next) => {
+            ctx.b = 2;
+            await next();
+        }
+    ])
+    await instance.run(ctx);
+    expect(ctx.a + ctx.b).toBe(3);
+})

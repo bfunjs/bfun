@@ -1,7 +1,5 @@
-import Middleware from './core/middleware';
-import Renderer from './core/renderer';
+import Bfun from './bfun';
 
-export {
-  Middleware,
-  Renderer,
-}
+(window as any).bfun = new Bfun();
+
+export default Bfun;

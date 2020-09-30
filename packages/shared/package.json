@@ -1,0 +1,24 @@
+{
+  "name": "@bfun/shared",
+  "version": "1.0.0",
+  "description": "@bfun/shared",
+  "main": "dist/shared.umd.prod.js",
+  "module": "dist/shared.esm.prod.js",
+  "types": "dist/index.d.ts",
+  "buildOptions": {
+    "env": "production",
+    "formats": [
+      "umd",
+      "esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfunjs/bfun.git"
+  },
+  "keywords": [
+    "bfun"
+  ],
+  "author": "suibinc@qq.com",
+  "license": "MIT"
+}
