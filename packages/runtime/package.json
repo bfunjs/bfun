@@ -2,14 +2,22 @@
   "name": "@bfun/runtime",
   "version": "1.0.4",
   "description": "@bfun/runtime",
-  "main": "dist/runtime.umd.prod.js",
-  "module": "dist/runtime.esm.prod.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "buildOptions": {
-    "env": "production",
-    "formats": [
-      "umd",
-      "esm"
+    "minified": true,
+    "dist": [
+      {
+        "name": "messenger",
+        "output": "dist/index.umd.js",
+        "format": "umd"
+      },
+      {
+        "output": "dist/index.esm.js",
+        "format": "esm",
+        "minified": false
+      }
     ]
   },
   "repository": {

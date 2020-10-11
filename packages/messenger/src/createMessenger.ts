@@ -1,4 +1,4 @@
-import { Middleware } from '@bfun/runtime';
+import { Middleware } from '@bfun/shared';
 
 export interface IOptions {
     targetOrigin: string;

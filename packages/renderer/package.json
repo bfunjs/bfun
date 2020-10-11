@@ -1,15 +1,18 @@
 {
-  "name": "@bfun/messenger",
-  "version": "1.0.0",
-  "description": "@bfun/messenger",
+  "name": "@bfun/renderer",
+  "version": "0.0.1",
+  "description": "@bfun/renderer",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "buildOptions": {
     "minified": true,
     "dist": [
       {
-        "name": "messenger",
+        "name": "renderer",
         "output": "dist/index.umd.js",
         "format": "umd"
       },
@@ -28,5 +31,5 @@
     "bfun"
   ],
   "author": "suibinc@qq.com",
-  "license": "MIT"
+  "license": "ISC"
 }

@@ -1,4 +1,4 @@
-import { Middleware } from '@bfun/runtime';
+import { Middleware } from '@bfun/shared';
 
 export interface IOptions {
     targetOrigin: string;
@@ -7,6 +7,7 @@ export interface IOptions {
 
 export interface IMessenger {
     on: (api: string | { [key: string]: IHandler }, handler: IHandler) => void;
+    off: (api: string | { [key: string]: IHandler }, handler: IHandler) => void;
     emit: (api: string, data?: any, origin?: string, transfer?: Transferable[]) => void;
 }
 
@@ -41,6 +42,17 @@ class Messenger implements IMessenger {
             if (typeof fn === 'function') {
                 if (!this.handler[key]) this.handler[key] = new Middleware();
                 this.handler[key].use(fn);
+            }
+        })
+    }
+
+    off(api: string | { [key: string]: IHandler }, handler: IHandler) {
+        const apis = typeof api === 'string' ? { [api]: handler } : api;
+        Object.keys(apis).map(key => {
+            const fn = apis[key];
+            if (!this.handler[key]) return;
+            if (typeof fn === 'function') {
+                this.handler[key].del(fn);
             }
         })
     }
